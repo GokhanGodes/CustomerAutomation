@@ -85,6 +85,7 @@ namespace CustomerAutomation.Services
                 .Where(x => string.IsNullOrEmpty(cusFilDto.TCKN) || x.TCKN == cusFilDto.TCKN)
                 .Where(x => string.IsNullOrEmpty(cusFilDto.Name) || x.Name == cusFilDto.Name)
                 .Where(x => string.IsNullOrEmpty(cusFilDto.LastName) || x.LastName == cusFilDto.LastName)
+                .Where(x => x.IsActive)
                 .ToList();
 
             var dtos = ObjectMapper.Mapper.Map<List<CustomerGetDto>>(enities);
