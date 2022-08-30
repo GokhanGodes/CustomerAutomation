@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Müşteri Bilgileri";
+    @model CustomerAutomationWeb.Models.CustomerViewModel
+
+}
+
+<div>
+    <Label>Kimlik No: </Label>
+    <label>@Model.TCKN</label>
+
+    <br />
+    <Label>Ad: </Label>
+    <label>@Model.Name</label>
+
+    <br />
+    <Label>Soyad: </Label>
+    <label>@Model.LastName</label>
+
+    <br />
+    <Label>Doğum Tarihi: </Label>
+    <label>@Model.BirthDate</label>
+
+    <br />
+    <Label>Adres: </Label>
+    <label>@Model.Address</label>
+
+    <br />
+    <Label>Telefon No: </Label>
+    <label>@Model.PhoneNumber</label>
+
+</div>

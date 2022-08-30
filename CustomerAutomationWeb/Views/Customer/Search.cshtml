@@ -1,0 +1,70 @@
+﻿@{
+    ViewData["Title"] = "Müşteri Arama";
+    List<CustomerViewModel> customers = ViewData["Customers"] as List<CustomerViewModel>;
+}
+@model CustomerFilterInput
+
+<form asp-controller="Customer" asp-action="Search" method="get">
+    <div asp-validation-summary="ModelOnly"></div>
+
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label">Müşteri Adı:</label>
+        <input asp-for="Name" class="form-control">
+    </div>
+    <div class="mb-3">
+        <label asp-for="LastName" class="form-label">Müşteri Soyadı:</label>
+        <input asp-for="LastName" class="form-control">
+
+    </div>
+    <div class="mb-3">
+        <label asp-for="TCKN" class="form-label">Müşteri Kimlik No:</label>
+        <input asp-for="TCKN" class="form-control">
+    </div>
+    <button type="submit" class="btn btn-primary" style="text-align:right">Ara</button>
+
+</form>
+
+<br />
+
+<div class="mb-3">
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Kimlik No</th>
+                <th>Ad</th>
+                <th>Soyad</th>
+                <th>BirthDate</th>
+                <th>Address</th>
+                <th>PhoneNumber</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (customers.Count > 0)
+            {
+                @foreach (var item in customers)
+                {
+                    <tr>
+                        <td>
+                            <label>@item.TCKN</label>
+                        </td>
+                        <td>
+                            <label>@item.Name</label>
+                        <td>
+                            <label>@item.LastName</label>
+                        </td>
+                        <td>
+                            <label>@item.BirthDate.ToShortDateString()</label>
+                        </td>
+                        <td>
+                            <label>@item.Address</label>
+                        </td>
+                        <td>
+                            <label>@item.PhoneNumber</label>
+                        </td>
+                    </tr>
+                }
+            }
+        </tbody>
+
+    </table>
+</div>

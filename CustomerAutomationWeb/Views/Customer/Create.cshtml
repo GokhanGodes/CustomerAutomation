@@ -1,0 +1,63 @@
+﻿@{
+    ViewData["Title"] = "Müşteri Kaydet";
+
+}
+@model CustomerAddInput
+
+@if (!string.IsNullOrEmpty(ViewBag.AlertMessage))
+{
+    <script type="text/javascript">
+
+        alert("@ViewBag.AlertMessage");
+    </script>
+
+}
+
+<form asp-controller="Customer" asp-action="Create" method="post">
+    <div asp-validation-summary="ModelOnly"></div>
+
+    <div class="mb-3">
+
+        <label asp-for="Name" class="form-label">Ad:</label>
+        <input asp-for="Name" class="form-control" type="text" minlength=1 maxlength=40>
+        <span class="text-danger" asp-validation-for="Name"></span>
+    </div>
+    <div class="mb-3">
+
+        <label asp-for="LastName" class="form-label">Soyad:</label>
+        <input asp-for="LastName" class="form-control" type="text" minlength=1 maxlength=40>
+        <span class="text-danger" asp-validation-for="LastName"></span>
+
+    </div>
+    <div class="mb-3">
+
+        <label asp-for="TCKN" class="form-label">Kimlik No:</label>
+        <input asp-for="TCKN" class="form-control" type="number" maxlength="11"
+        oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" >
+        <span class="text-danger" asp-validation-for="TCKN"></span>
+
+    </div>
+    <div class="mb-3">
+
+        <label asp-for="BirthDate" class="form-label">Doğum Tarihi:</label>
+        <input asp-for="BirthDate" type="date" class="form-control">
+        <span class="text-danger" asp-validation-for="BirthDate"></span>
+
+    </div>
+    <div class="mb-3">
+
+        <label asp-for="Address" class="form-label">Adres:</label>
+        <input asp-for="Address" class="form-control">
+        <span class="text-danger" asp-validation-for="Address"></span>
+
+    </div>
+    <div class="mb-3">
+
+        <label asp-for="PhoneNumber" class="form-label">Telefon No:</label>
+        <input asp-for="PhoneNumber" class="form-control" type="tel" placeholder="0512-345-67-89" pattern="[0-0]{1}[5-5]{1}[0-9]{2}-[0-9]{3}-[0-9]{2}-[0-9]{2}" maxlength=14>
+        <span class="text-danger" asp-validation-for="PhoneNumber"></span>
+
+    </div>
+    <button type="submit" class="btn btn-primary">Müşteri Kaydet</button>
+
+</form>

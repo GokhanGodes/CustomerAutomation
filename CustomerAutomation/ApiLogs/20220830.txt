@@ -1,0 +1,15 @@
+Type: Request
+Method:GET
+ApiAddress:/api/Customer/GetAll
+Date: 30.08.2022 11:15:54
+Request Parameters:
+
+
+Type: Response
+Method:GET
+ApiAddress:/api/Customer/GetAll
+Date: 30.08.2022 11:15:54
+Response Status: 200
+Response Value: 
+{"Data":[{"Id":1,"TCKN":"28727133856","Name":"Gökhan","LastName":"Gödeş","BirthDate":"1995-06-12T00:00:00","Address":"İzmir","PhoneNumber":"05050911295"},{"Id":2,"TCKN":"28727133858","Name":"Doğukan","LastName":"Gödeş","BirthDate":"2001-07-16T00:00:00","Address":"Ankara","PhoneNumber":"05061782420"},{"Id":3,"TCKN":"28727133860","Name":"Elif Öykü","LastName":"Gödeş","BirthDate":"2012-08-03T00:00:00","Address":"İstanbul","PhoneNumber":"-"}],"Status":200,"ErrorMessages":null} 
+
